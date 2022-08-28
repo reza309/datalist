@@ -1,0 +1,87 @@
+@charset "utf-8";
+/* CSS Document */
+
+.s-login-con {
+	height: 697px;
+	background: url("../images/systems/bg/118959508_1355429464650289_2967785751414223081_n.jpg");
+}
+.s-reg-con {
+	height: 1166px;
+	background: url("../images/systems/bg/118959508_1355429464650289_2967785751414223081_n.jpg");
+}
+
+.s-login-inner-con {
+	background: #081D2DED;
+	top: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.s-loin-right {
+    top: 0;
+    bottom: 0;
+/*    left: 0;*/
+    right: 0;
+    border-width: 2px !important;
+}
+
+.s-loin-left {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    border-width: 2px !important;
+}
+
+.s-login-seperator-t {
+    width: 50rem;
+    display: none;
+}
+
+.s-login-seperator-b {
+    width: 50rem;
+    display: none;
+}
+.s-login-sub-inner {
+	width: 22.5rem;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	overflow: hidden;
+}
+.s-login-seperator-t {
+	width: 50rem;
+	position: absolute;
+	transform: rotate(42deg);
+	left: -62px;
+	z-index: 2;
+	/* bottom: 209px; */
+}
+.s-login-seperator-b {
+	width: 50rem;
+	position: absolute;
+	bottom: 275px;
+	transform: rotate(135deg);
+	left: 215px;
+	/* right: 88px; */
+}
+.s-login-form-container {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+        
+}
+.form-bg {
+	background-color: #000D1E !important;
+	border: 1px solid #0707A8 !important;
+}
+
+.s-login-btn-container .btn {
+	width: 100% !important;
+	display: block;
+}
+
+.s-login-text {
+	margin-top: 2rem;
+}

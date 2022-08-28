@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+.r-featured-img {
+    height: auto !important;
+    width: 100px;
+}
+
+
+.r-text-custom {
+	color: #040F17 !important;
+}
+
+.r-socials {
+	font-size: 2rem !important;
+}

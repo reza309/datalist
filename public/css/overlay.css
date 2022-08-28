@@ -1,0 +1,26 @@
+.overlay-container {
+	position: fixed;
+	bottom: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.89);
+	z-index: 15;
+}
+.over-lay-sppiner {
+	font-size: 7rem;
+	text-align: center;
+	margin: 20% auto;
+}
+/*
+over for category view page
+*/
+.cat-overlay-container {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: #FFFFFFD1;
+	display: none;
+}

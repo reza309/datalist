@@ -1,0 +1,114 @@
+@charset "utf-8";
+/* CSS Document */
+.m-prev-magnified-galary-btn,
+.m-next-magnified-galary-btn{
+	position: absolute;
+	width: 30px;
+	height: 350px;
+	top: 0;
+	border: none;
+	cursor: pointer;
+	background-color: #ffffff40;
+}
+.m-prev-magnified-galary-btn{
+	left: 0;
+}
+.m-next-magnified-galary-btn{
+	right:0;
+}
+.m-prev-magnified-galary-btn:hover{
+	box-shadow: 6px 0 5px #4a4a4a17;
+}
+.m-next-magnified-galary-btn:hover{
+	box-shadow: -6px 0 5px #4a4a4a17;
+}
+.m-prev-magnified-galary-btn .fa-angle-left, 
+.m-next-magnified-galary-btn .fa-angle-right {
+	color: #fbf5f5cf;
+	font-size: 30px;
+	margin-top:11rem;
+}
+.m-prev-magnified-galary-btn .fa-angle-left{
+	margin-left:5px;
+}
+.m-next-magnified-galary-btn .fa-angle-right {
+	margin-left:5px;
+}
+.m-magnified-sub-img-galary{
+	overflow-x: hidden;
+	margin-left:-12px;
+}
+.m-mg-sub-img-galary-next-btn,
+.m-mg-sub-img-galary-prev-btn {
+	position: absolute !important;
+	top: 0 !important;
+	width: 30px !important;
+	height: 103px !important;
+	background-color: #e8e8e8;
+	z-index: 9 !important;
+	cursor: pointer !important;
+	border: none;
+}
+.m-mg-sub-img-galary-next-btn {
+	right: 0 !important;
+	top: 0 !important;
+}
+.m-mg-sub-img-galary-next-btn:hover {
+	box-shadow: -6px 0 5px #00000017
+}
+.m-mg-sub-img-galary-prev-btn {
+	left: 0;
+	top: 0;
+}
+.m-mg-sub-img-galary-prev-btn:hover {
+	box-shadow: 6px 0 5px #00000017
+}
+.m-mg-sub-img-galary-next-btn .fa-angle-right {
+	color: #fff;
+	font-size: 26px;
+}
+.m-mg-sub-img-galary-prev-btn .fa-angle-left{
+	color: #fff;
+	font-size: 26px;
+}
+.m-mg-sub-img-glr-btn-disabled{
+	cursor:not-allowed !important;
+}
+.m-sub-gl-img-left-flow{
+	margin-left:-100px;
+}
+.m-sub-gl-img-right-flow{
+	margin-left:-100px;
+}
+.imag-zoom-container {
+	position: absolute;
+	top: -1px;
+	right: -35.7rem;
+	width: 570px;
+	height: 353px;
+	background-color: #fff;
+	z-index: 999;
+	border: 1px solid #d5d5d5;
+	border-radius: 5px;
+	display:none;
+	
+}
+.m-zoom-img-card-body:hover .imag-zoom-container{
+	display:block;
+}
+
+.m-img-zoom-result {
+  /*set the size of the result div:*/
+  width: 100%;
+  height: 100%;
+}
+.m-img-zoom-lens {
+	position: absolute;
+	border: 1px solid #c6c5c5;
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	background-image:url("../images/systems/logo/zoom-magnified.png");
+	background-size: cover;
+	cursor:grab;
+}

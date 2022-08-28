@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document */
+.m-checkout-opt {
+	width: 100%;
+	height: 160px;
+}
+h1{
+	font-size:25px;
+}
+.m-checkout-opt {
+	width: 100%;
+	height: 455px;
+	font-size: 12px !important;
+}
+.m-img-zoom-lens {
+	position: absolute;
+	border: 1px solid #c6c5c5;
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	background-image: url("../images/systems/logo/zoom-magnified.png");
+	background-size: cover;
+	cursor: grab;
+	display: none;
+}
