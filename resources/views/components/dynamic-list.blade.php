@@ -43,7 +43,7 @@
     var dataList = data_list.data_list({
         serverSide: true,
         url: '/list/ls',
-        listPerPage: 1
+        listPerPage: 10
     });
     $(document).on('click', ".btn", function(event) {
         let form_data = $(this).closest('form').serializeArray();

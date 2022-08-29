@@ -24,7 +24,7 @@ class ListController extends Controller
     {
         $list = User::select();
         $total_record = $list->count();
-        $list = $list->skip($request->current-1)->take($request->limit)->get();
+        $list = $list->skip($request->current)->take($request->limit)->get();
         $data = array();
         foreach ($list as $key => $value) {
             array_push($data,$value->name);

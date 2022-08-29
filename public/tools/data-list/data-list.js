@@ -17,9 +17,13 @@
                 if ((adjacents = (Math.floor(adjacents / 2) * 2 * 1)) >= 1) {
                     // console.log(adjacents);
                     let last = (Math.max(0, Math.min((result.length) - adjacents, parseInt(current) - Math.ceil(adjacents / 2)))) + adjacents;
-
+                    // last = last-2;
+                    if (current==1 & (data/limit)<adjacents) {
+                        last = Math.ceil(data/limit);
+                    }
                     result = result.slice(Math.max(0, Math.min((result.length) - adjacents, parseInt(current) - Math.ceil(adjacents / 2))), last);
-                    if (last < data) {
+                    // console.log(last);
+                    if ( (limit*last)< data) {
                         result.push('... ...');
                     }
                 }
@@ -29,8 +33,11 @@
         return result;
     }
     function data_list_ajax(settings, __this) {
+        console.log('perpage='+settings.listPerPage);
+        console.log('current='+settings.current);
+        console.log("limit: ="+((settings.listPerPage*settings.current)-settings.listPerPage));
         $.ajax({
-            url: settings.url + '?limit=' + settings.listPerPage + '&current=' + settings.current,
+            url: settings.url + '?limit=' + settings.listPerPage + '&current=' + ((settings.listPerPage*settings.current)-settings.listPerPage),
             method: settings.method,
             dataType: settings.dataType,
             success: function (data) {
@@ -44,7 +51,7 @@
                 list_footer += '<div class="data-list-count">' + data.totalRecord + '</div>';
                 list_footer += '<div> Records Found</div>';
                 list_footer += '</div >';
-                list_footer += '<ul class="lgrp-paginate" data-total="' + data.totalRecord + '">';
+                list_footer += '<ul class="lgrp-paginate" data-total="' + data.totalRecord + '" data-listperpage="'+settings.listPerPage+'">';
                 list_footer += '<li class="data-list-page-item prev" data-page="prev">&laquo;</li>';
                 let list_array = pagination(data.totalRecord, settings.listPerPage, settings.current, 4);
                 $.each(list_array, function (index, value) {
@@ -53,6 +60,7 @@
                         list_active = 'dl-active';
                     }
                     if (value === '... ...') {
+                        // console.log(index);
                         paging_dots = 'dl-paging-dots';
                     }
                     list_footer += '<li class="data-list-page-item ' + list_active + ' ' + paging_dots + '" data-page="' + value + '">' + value + '</li>';
@@ -70,7 +78,7 @@
 
                 __this.after(list_footer);
                 //change disable background for netx
-                if (settings.current >= data.totalRecord) {
+                if ((settings.listPerPage*settings.current) >= data.totalRecord) {
                     __this.next().find(".next").css({
                         'background-color':'#00000087',         
                         'cursor':'context-menu',         
@@ -128,7 +136,7 @@
     }
     $(document).on("click", ".data-list-page-item", function () {
         var dataList = $(this).closest(".data-list-footer").prev();
-        var current, totalRecord;
+        var current, totalRecord,listPerPage;
         // console.log(dataList);
         current = $(this).data('page');
         if ($(this).data('page') === '... ...') {
@@ -143,8 +151,9 @@
             current = current - 1;
         }
         totalRecord = $(this).closest('ul').data('total');
-        console.log(current);
-        if (current <= totalRecord && current > 0) {
+        listPerPage = $(this).closest('ul').data('listperpage');
+        // console.log("current*list" + (((current)*listPerPage)-listPerPage));
+        if ((current*listPerPage)-listPerPage < totalRecord && current > 0) {
             dataList.draw_list(current);
         }
         
