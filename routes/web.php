@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ListController;
+use App\Http\Controllers\TreeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,4 @@ Route::get('/', function () {
 Route::get('/list',[ListController::class,'get_list'])->name('get-list');
 Route::post('/list',[listController::class,'put_list'])->name('put-list');
 Route::get('/list/ls',[listController::class,'put_list_ls'])->name('ls.get-list');
+Route::get('/tree',[TreeController::class,'trees'])->name('ls.get-list');

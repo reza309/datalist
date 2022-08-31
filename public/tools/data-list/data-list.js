@@ -33,9 +33,6 @@
         return result;
     }
     function data_list_ajax(settings, __this) {
-        console.log('perpage='+settings.listPerPage);
-        console.log('current='+settings.current);
-        console.log("limit: ="+((settings.listPerPage*settings.current)-settings.listPerPage));
         $.ajax({
             url: settings.url + '?limit=' + settings.listPerPage + '&current=' + ((settings.listPerPage*settings.current)-settings.listPerPage),
             method: settings.method,
@@ -60,7 +57,6 @@
                         list_active = 'dl-active';
                     }
                     if (value === '... ...') {
-                        // console.log(index);
                         paging_dots = 'dl-paging-dots';
                     }
                     list_footer += '<li class="data-list-page-item ' + list_active + ' ' + paging_dots + '" data-page="' + value + '">' + value + '</li>';
@@ -100,6 +96,9 @@
     }
     var list_options = '';
     $.fn.data_list = function (options) {
+        // add new class 
+        this.addClass('data-list');
+        this.wrap('<div class="data-list-wrapper position-relative"></div>');
         var list_item;
         list_options = options;
         var __this = this;

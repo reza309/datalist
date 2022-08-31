@@ -23,7 +23,8 @@ class ListController extends Controller
     public function put_list_ls(Request $request)
     {
         $list = User::select();
-        $total_record = $list->count();
+        $total_record = $list->limit(10)->count('id');
+        // $total_record = $list->skip($request->current)->take($request->limit)->count('id');
         $list = $list->skip($request->current)->take($request->limit)->get();
         $data = array();
         foreach ($list as $key => $value) {

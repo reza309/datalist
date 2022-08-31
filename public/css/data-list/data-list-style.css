@@ -44,3 +44,17 @@
 	background-color: inherit;
 	color: inherit;
 }
+.data-list::after {
+	content: "";
+	/* background-color: blanchedalmond;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0; */
+	/* float: left; */
+}
+.data-list-wrapper {
+	position: relative;
+	min-height: 148px;
+}
